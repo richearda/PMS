@@ -1,0 +1,476 @@
+<div class="container rounded bg-white">
+  <input type="button" (click)="testMethod(personToUpdate)">
+  <form [formGroup]="userFormData" (ngSubmit)="addPerson(personToAdd)">
+    <div class="row">
+      
+      <div class="col-md-2 border-right mt-sm-2">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <img
+            class="rounded-circle mt-5"
+            width="150px"
+            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+          />
+          <div class="mb-3">
+            <label for="uploadPicture" class="form-label">Upload Picture</label>
+            <input
+              class="form-control form-control-sm"
+              accept="image/*"
+              id="uploadPicture"
+              type="file"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 border-right">
+        <div class="p-3 py-5">
+          
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="text-right">Personal Information</h4>
+          </div>
+                  
+          <div class="row" formGroupName="appUser">
+            <div class="col-md-6">
+              <label class="labels">User Type</label
+              ><select
+                class="form-select"
+                id="userType"
+                aria-label="Select for User Type"
+                formControlName="appUserTypeId"
+              >
+                <option selected>Select User Type</option>    
+                <option *ngFor="let appUserType of appUserTypes" value="{{appUserType.appUserTypeId}}">{{appUserType.appUserTypeName}}</option>           
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Username</label
+              ><input
+                type="text"
+                class="form-control"
+                id="userName"
+                placeholder="Username"
+                formControlName="userName"
+              />
+            </div>
+
+          </div>
+          <div class="row" formGroupName="person"> 
+            <label
+            type="hidden"
+            id="personId"
+            formControlName="personId"
+            >
+            </label>           
+            <div class="col-md-6">
+              <label class="labels">First Name</label
+              ><input
+                type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="First Name"
+                formControlName="firstName"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Middle Name</label
+              ><input
+                type="text"
+                class="form-control"
+                id="middleName"
+                placeholder="Middle Name"
+                formControlName="middleName"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Last Name</label
+              ><input
+                type="text"
+                class="form-control"
+                id="lastName"
+                placeholder="Last Name"
+                formControlName="lastName"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label class="labels">Gender</label
+              ><select
+                class="form-select"
+                id="gender"
+                aria-label="Select for Gender"
+                formControlName="genderId"
+              >
+                <option selected>Select Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Civil Status</label
+              ><select
+                class="form-select"
+                id="civilStatus"
+                aria-label="Select for Civil Status"
+                formControlName="civilStatusId"
+              >
+                <option selected>Select Civil Status</option>
+                <option value="1">Single</option>
+                <option value="2">Married</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Citizenship</label
+              ><select
+                class="form-select"
+                id="citizenship"
+                aria-label="Select for Citizenship"
+                formControlName="citizenshipId"
+              >
+                <option selected>Select Citizenship</option>
+                <option value="1">Filipino</option>
+                <option value="2">Others</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label class="labels">Birth Place</label
+              ><input
+                type="text"
+                class="form-control"
+                id="birthPlace"
+                placeholder="Birth Place"
+                formControlName="birthPlace"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Birth Date</label>
+              <div class="input-group date" id="datepicker">
+                <input
+                  type="date"
+                  class="form-control"
+                  id="birthDate"
+                  formControlName="birthDate"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Height</label
+              ><input
+                type="text"
+                class="form-control"
+                id="height"
+                placeholder="Ex: 5'2"
+                formControlName="height"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Weight</label
+              ><input
+                type="text"
+                class="form-control"
+                id="weight"
+                placeholder="Ex: 60 kg"
+                formControlName="weight"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Religion</label
+              ><input
+                type="text"
+                class="form-control"
+                id="regigion"
+                placeholder="Religion"
+                formControlName="religion"
+              />
+            </div>
+          
+       
+            <div class="col-md-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="withNatId"
+                  formControlName="withNatId"
+                />
+                <label class="form-check-label" for="withNatId">
+                  With NatID
+                </label>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="withSssGsis"
+                  formControlName="withSssGsis"
+                />
+                <label class="form-check-label" for="withSSS">
+                  With SSS/GSIS
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="withDriversLicense"
+                  formControlName="withDriversLicense"
+                />
+                <label class="form-check-label" for="withDriversLicense">
+                  With Driver's License
+                </label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="isRegisteredVoter"
+                  formControlName="isRegisteredVoter"
+                />
+                <label class="form-check-label" for="isRegisteredVoter">
+                  Is Registered Voter
+                </label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="labels">Precinct No</label
+              ><input
+                type="text"
+                class="form-control"
+                id="precintNo"
+                placeholder="Precint No."
+                formControlName="precintNo"
+              />
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="text-right">Contact Information</h4>
+            </div>
+            <label class="labels">Telephone Number</label
+            ><input
+              type="text"
+              class="form-control"
+              placeholder="Tel No"
+              formControlName="telephoneNo"
+            />
+            <label class="labels">Mobile Number</label
+            ><input
+              type="text"
+              class="form-control"
+              placeholder="Mobile No"
+              formControlName="mobileNo"
+            />
+            <div class="col-md-12">
+              <label class="labels">Email Address</label
+              ><input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                formControlName="email"
+              />
+            </div>
+
+            <label class="labels">Blood Type</label
+              ><select
+                class="form-select"
+                aria-label="Select for Blood Type"
+                formControlName="bloodTypeId"
+                                    
+              >
+                <option selected>Select Blood Type</option>
+                <option
+                  *ngFor="let bloodtype of bloodTypes"
+                  value="{{bloodtype.bloodTypeId}}"
+                >
+                  {{ bloodtype.bloodTypeName }}
+                </option>
+              </select>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-3 py-5">
+          
+          <div class="row py-3" formGroupName="address">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="text-right">Address Information</h4>
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Block/Lot No.</label
+              ><input
+                type="text"
+                class="form-control"
+                placeholder=""
+                formControlName="houseBlockLotNo"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Street</label
+              ><input
+                type="text"
+                class="form-control"
+                placeholder=""
+                formControlName="street"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="labels">City/Municipality</label
+              ><select
+                class="form-select"
+                aria-label="Select for City/Municipality"
+                formControlName="cityMunicipalityId"
+                #selectedCityMunicipality
+                (change)="
+                  getBarangaysByCityMunicipalityId(id.nativeElement.value)
+                "
+              >
+                <option selected>Select City/Municipality</option>
+                <option
+                  *ngFor="let citymunicipality of cityMunicipalities"
+                  value="{{ citymunicipality.cityMunicipalityId }}"
+                >
+                  {{ citymunicipality.cityMunicipalityName }}
+                </option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Barangay</label
+              ><select
+                class="form-select"
+                aria-label="Default select example"
+                formControlName="barangayId"
+                #selectedBarangay
+                (change)="
+                  getPurokSitiosByBarangayId(barangayId.nativeElement.value)
+                "
+              >
+                <option selected>Select Barangay</option>
+                <option
+                  *ngFor="let barangay of cityMunicipalityBarangays"
+                  value="{{ barangay.barangayId }}"
+                >
+                  {{ barangay.barangayName }}
+                </option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Purok/Sitio</label
+              ><select
+                class="form-select"
+                aria-label="Default select example"
+                formControlName="purokSitioId"
+              >
+                <option selected>Select Purok/Sitio</option>
+                <option
+                  *ngFor="let puroksitio of barangayPurokSitios"
+                  value="{{ puroksitio.purokSitioId }}"
+                >
+                  {{ puroksitio.purokSitioName }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center" formGroupName="healthBackground">
+        <div class="col-md-4">
+          <div>
+            <div class="d-flex justify-content-between">
+              <h4 class="text-center">Health Background</h4>
+            </div>
+            <div class="row">
+          
+                <div class="row">
+                  
+                  <div class="col-md-4 mx-4">
+                    <label class="form-check-label" for="isMalnurish">
+                      Is Malnurish
+                    </label>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="isMalnurish"
+                        formControlName="isMalnurish"
+                      />
+                      
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mx-2">
+                    <label class="form-check-label" for="isPwd">
+                      Is Pwd
+                    </label>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="isPwd"
+                        formControlName="isPwd"
+                      />
+                     
+                    </div>
+                  </div>
+              
+                <div class="row">  
+                  <label class="labels">Pre Existing Condition</label>               
+                  <div class="col-md-6">                   
+                    <select
+                      class="form-select"
+                      aria-label="Select for Pre Existing Condition"
+                      formControlName="preExistingConditionId"
+                                          
+                    >
+                      <option selected>Select Condition</option>
+                      <option
+                        *ngFor="let condition of preExistingConditions"
+                        value="{{ condition.preExistingConditionId }}"
+                      >
+                        {{ condition.conditionName }}
+                      </option>
+                    </select>
+                  </div>
+                  <label class="labels">Vaccine Taken</label>
+                  <div class="col-md-6">                   
+                    <select
+                      class="form-select"
+                      aria-label="Select for Vaccine Taken"
+                      formControlName="vaccineTakenId"
+                                          
+                    >
+                      <option selected>Select Vaccine</option>
+                      <option
+                        *ngFor="let vaccine of vaccinesTaken"
+                        value="{{vaccine.vaccineTakenId}}"
+                      >
+                        {{ vaccine.vaccineName }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="mt-5 text-center">
+      <button class="btn btn-success profile-button" type="submit" id="save">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+@media (min-width: 768px) {
+    body {
+      overflow: auto !important;
+    }
+    main {
+      margin-left: 180px;
+    }
+    /* this is to remove the backdrop */
+    .offcanvas-backdrop::before {
+      display: none;
+    }
+    .sidebar-nav {
+      -webkit-transform: none;
+      transform: none;
+      visibility: visible !important;
+      height: calc(100% - var(--topNavbarHeight));
+      top:56px;
+    }
+  }

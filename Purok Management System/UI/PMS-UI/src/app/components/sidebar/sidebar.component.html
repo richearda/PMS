@@ -1,0 +1,195 @@
+ <!-- top navigation bar -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#sidebar"
+      aria-controls="offcanvasExample"
+    >
+      <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+    </button>
+    <a
+      class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+      href="#"
+      >Purok Management System</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#topNavBar"
+      aria-controls="topNavBar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="topNavBar">
+      <ul class="navbar-nav d-flex ms-auto">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle ms-2"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-person-fill"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Personal Info</a></li>
+            <li><a class="dropdown-item" href="#">Log out</a></li>         
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- top navigation bar -->
+<!-- offcanvas -->
+<div
+  class="offcanvas offcanvas-start sidebar-nav bg-dark"
+  tabindex="-1"
+  id="sidebar"
+
+>
+  <div class="offcanvas-body p-0">
+    <nav class="navbar-dark">
+      <ul class="navbar-nav">     
+        <li>
+          <a routerLink="conductsurvey" routerLinkActive="active" class="nav-link px-3">
+            <span class="me-2"><i class="bi bi-graph-up"></i></span>
+            <span>Conduct Survey</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="manage/user" routerLinkActive="active" class="nav-link px-3">
+            <span class="me-2"><i class="bi bi-table"></i></span>
+            <span>User Management</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" routerLinkActive="active" class="nav-link px-3">
+            <span class="me-2"><i class="bi bi-table"></i></span>
+            <span>Complains</span>
+          </a>
+        </li>
+        
+        <li>
+          <a
+            class="nav-link px-3 sidebar-link"
+            data-bs-toggle="collapse"
+            href="#layouts"
+          >
+            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+            <span>Request</span>
+            <span class="ms-auto">
+              <span class="right-icon float-end">
+                <i class="bi bi-chevron-down"></i>
+              </span>
+            </span>
+          </a>
+          <div class="collapse" id="layouts">
+            <ul class="navbar-nav ps-3">
+              <li>
+                <a routerLink="request/barangay-id" routerLinkActive="active" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-house-door"></i>
+                  </span>
+                  <span>Barangay ID</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="request/barangay-clearance" routerLinkActive="active" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-house-heart-fill"></i>
+                  </span>
+                  <span>Barangay Clearance</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a
+            class="nav-link px-3 sidebar-link"
+            data-bs-toggle="collapse"
+            href="#layouts"
+          >
+            <span class="me-2"><i class="bi bi-layout-split"></i></span>
+            <span>App Settings</span>
+            <span class="ms-auto">
+              <span class="right-icon float-end">
+                <i class="bi bi-chevron-down"></i>
+              </span>
+            </span>
+          </a>
+          <div class="collapse" id="layouts">
+            <ul class="navbar-nav ps-3">
+              <li>
+                <a routerLink="app/setting/manage/barangay" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-house-door"></i>
+                  </span>
+                  <span>Barangay</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="app/setting/manage/purok-sitio" routerLinkActive="active" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-house-heart-fill"></i>
+                  </span>
+                  <span>Purok/Sitio</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="app/setting/manage/condition" routerLinkActive="active" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                  ></span>
+                  <span>Condition</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="app/setting/manage/vaccine" routerLinkActive="active" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                  ></span>
+                  <span>Vaccine</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="app/setting/manage/bloodtypes" routerLinkActive="active" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                  ></span>
+                  <span>Blood Type</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="app/setting/manage/requesttype" routerLinkActive="active" class="nav-link px-3">
+                  <span class="me-2"
+                    ><i class="bi bi-speedometer2"></i
+                  ></span>
+                  <span>Request Type</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- offcanvas -->
+<div class="row">
+  <div class="container-fluid">
+  <main class="mt-5 pt-3 main">
+      <router-outlet></router-outlet>  
+  </main>
+  </div>
+</div>
