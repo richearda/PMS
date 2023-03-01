@@ -50,7 +50,7 @@ export class BarangayService {
    }
 
    getBarangays(){
-    return this.http.get<BarangayListDto[]>(this.baseUrl + "api/barangay/list");
+    return this.http.get<BarangayListDto[]>(this.baseUrl + "barangay/list");
    }
 
    getPurokSitiosByBarangayId(barangayId:number):Observable<PurokSitioListDto[]> {

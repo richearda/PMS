@@ -17,10 +17,10 @@ export class PuroksitioService {
   }
 
   getPurokSitios():Observable<PurokSitioListDto[]> {
-    return this.http.get<PurokSitioListDto[]>(this.baseUrl + "api/puroksitio/list");
+    return this.http.get<PurokSitioListDto[]>(this.baseUrl + "puroksitio/list");
   }
   addPurokSitio(purokSitio:CreatePurokSitioDto){
-    return this.http.post(this.baseUrl + "api/puroksitio/create", purokSitio);
+    return this.http.post(this.baseUrl + "puroksitio/create", purokSitio);
   }
   getPurokSitioWithParams(page?:number,itemsPerPage?:number, barangayParams?:string):Observable<PaginatedResult<PurokSitioListDto[]>> {
     const paginatedResult: PaginatedResult<PurokSitioListDto[]> = new PaginatedResult<PurokSitioListDto[]>
@@ -35,7 +35,7 @@ export class PuroksitioService {
       params = params.append('barangayName', barangayParams);
     }
 
-    return this.http.get<PurokSitioListDto[]>(this.baseUrl + "api/puroksitio/list/bybarangay", {observe: 'response', params})
+    return this.http.get<PurokSitioListDto[]>(this.baseUrl + "puroksitio/list/bybarangay", {observe: 'response', params})
     .pipe(
         map(response => {
           paginatedResult.result = response.body!;
